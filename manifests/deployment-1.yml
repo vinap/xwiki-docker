@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "xwiki-b7dd"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "xwiki-b7dd"
+  template:
+    metadata:
+      labels:
+        app: "xwiki-b7dd"
+    spec:
+      containers:
+        - name: "xwiki-b7dd"
+          image: "xwiki9404.azurecr.io/xwiki"
+          ports:
+          - containerPort: 80
