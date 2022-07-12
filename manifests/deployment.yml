@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "xwiki-ac7d"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "xwiki-ac7d"
+  template:
+    metadata:
+      labels:
+        app: "xwiki-ac7d"
+    spec:
+      containers:
+        - name: "xwiki-ac7d"
+          image: "xwikiragistry.azurecr.io/xwiki"
+          ports:
+          - containerPort: 80
